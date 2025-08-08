@@ -4,287 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Germán Andrés López Valbuena | Portafolio</title>
+    <title>Portafolio | Andrés Valbuena</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            background: #f7f9fc;
-            color: #333;
-        }
-
-        header {
-            background: #0a192f;
-            color: #fff;
-            padding: 4rem 2rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-        }
-
-        .intro-text {
-            text-align: center;
-        }
-
-        .intro-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .intro-text p {
-            font-size: 1.2rem;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #0a192f;
-        }
-
-        .about,
-        .skills,
-        .projects,
-        .experience,
-        .contact {
-            margin-bottom: 4rem;
-        }
-
-        .skills-list,
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .skills-list i,
-        .social-links a {
-            font-size: 2rem;
-            color: #0a192f;
-            transition: transform 0.3s;
-        }
-
-        .skills-list i:hover,
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-
-        .project-card {
-            perspective: 1000px;
-        }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .project-card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-front,
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            color: white;
-        }
-
-        .card-front {
-            background-size: cover;
-            background-position: center;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        .card-front::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 0;
-        }
-
-        .card-front h3,
-        .card-front span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-front h3 {
-            font-size: 1.4rem;
-        }
-
-        .card-front span {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .card-back {
-            background: #0a192f;
-            transform: rotateY(180deg);
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        .timeline {
-            border-left: 3px solid #0a192f;
-            padding-left: 1rem;
-        }
-
-        .timeline-item {
-            margin-bottom: 1rem;
-        }
-
-        form input,
-        form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        form button {
-            padding: 0.75rem 2rem;
-            background: #0a192f;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background: #112240;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #0a192f;
-            color: #fff;
-        }
-
-        .wave-bottom {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            margin-top: -5px;
-        }
-
-        .wave-bottom svg {
-            display: block;
-            width: 100%;
-            height: 80px;
-        }
-
-        /* Estilo del loader */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #0a192f;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        /* Estilo del spinner */
-        .spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #64ffda;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-
-        @media (max-width: 600px) {
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animación del spinner */
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
 </head>
 
 <body>
 
-    <!-- Loader -->
     <div id="loader">
         <div class="spinner"></div>
     </div>
-
 
     <header data-aos="fade-down">
         <img src="img/andres_valbuena.jpg" alt="Andrés Valbuena" class="profile-pic">
         <div class="intro-text">
             <h1>Germán Andrés López Valbuena</h1>
             <p>Ingeniero de Sistemas | Desarrollador Fullstack</p>
-            <!-- <p>"絶対に諦めない - Nunca me rendiré"</p> -->
         </div>
 
     </header>
@@ -376,9 +116,8 @@
             <button type="submit">Enviar</button>
         </form>
         <div class="social-links">
-            <!-- <a href="https://github.com/ValbadExe" target="_blank"><i class="fab fa-github"></i></a> -->
             <a href="https://instagram.com/valbad_exe" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/573184744362?text=Hola%20Andr%C3%A9s%2C%20estoy%20interesado%2Fa%20en%20tu%20trabajo" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <!-- <a href="https://wa.me/573184744362?text=Hola%20Andr%C3%A9s%2C%20estoy%20interesado%2Fa%20en%20tu%20trabajo" target="_blank"><i class="fab fa-whatsapp"></i></a> -->
             <a href="https://linkedin.com/in/g-andres-valbuena" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:andresvalbuena12@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
@@ -389,22 +128,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        window.addEventListener("load", function () {
-            const loader = document.getElementById("loader");
-
-            // Esperar al menos 1500 ms (1.5 segundos) antes de ocultar
-            setTimeout(() => {
-                loader.style.opacity = "0";
-                loader.style.visibility = "hidden";
-            }, 1000); // Cambia este número para ajustar el tiempo en milisegundos
-        });
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 

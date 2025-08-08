@@ -1,0 +1,3 @@
+Copyright (c) 2025 Germán Andrés López Valbuena. Todos los derechos reservados.
+
+Este proyecto es propiedad intelectual de su autor. No se permite la copia, distribución o modificación del código fuente sin autorización previa y expresa.
